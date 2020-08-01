@@ -15,14 +15,14 @@
     <session id="-115606361">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="20" />
-          <entry key="project.open.time.0" value="12" />
+          <entry key="project.closed" value="21" />
+          <entry key="project.open.time.0" value="13" />
           <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="22" />
+          <entry key="project.opened" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -30,7 +30,7 @@
           <entry key="COPYING" value="1" />
           <entry key="cpp" value="3" />
           <entry key="gitignore" value="1" />
-          <entry key="py" value="44" />
+          <entry key="py" value="46" />
           <entry key="pyi" value="1" />
           <entry key="svg" value="3" />
         </counts>
@@ -39,7 +39,7 @@
         <counts>
           <entry key="C++" value="3" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="44" />
+          <entry key="Python" value="46" />
           <entry key="PythonStub" value="1" />
           <entry key="SVG" value="3" />
         </counts>
@@ -48,7 +48,7 @@
         <counts>
           <entry key="cpp" value="1" />
           <entry key="gitignore" value="8" />
-          <entry key="py" value="3692" />
+          <entry key="py" value="4143" />
           <entry key="svg" value="2" />
           <entry key="txt" value="6" />
         </counts>
@@ -57,7 +57,7 @@
         <counts>
           <entry key="C++" value="1" />
           <entry key="PLAIN_TEXT" value="14" />
-          <entry key="Python" value="3692" />
+          <entry key="Python" value="4143" />
           <entry key="SVG" value="2" />
         </counts>
       </usages-collector>
@@ -114,7 +114,7 @@
         <entry file="file://$PROJECT_DIR$/blenderAddons/StickyLipsAddon.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="16" column="1" lean-forward="true" selection-start-line="5" selection-end-line="16" selection-end-column="1" />
+              <caret line="16" column="1" selection-start-line="5" selection-end-line="16" selection-end-column="1" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -126,7 +126,7 @@
         <entry file="file://$PROJECT_DIR$/blenderShading.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+              <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
               <folding>
                 <marker date="1594298359124" expanded="true" signature="562:565" ph="..." />
               </folding>
@@ -137,12 +137,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cameraRotation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="653">
-              <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
+            <state relative-caret-position="374">
+              <caret line="76" column="9" lean-forward="true" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
               <folding>
-                <marker date="1596195299488" expanded="true" signature="2020:2022" ph="..." />
-                <marker date="1596195299488" expanded="true" signature="2915:3029" ph="..." />
-                <marker date="1596195299488" expanded="true" signature="4059:4266" ph="..." />
+                <element signature="e#273#283#0" expanded="true" />
+                <marker date="1596279019371" expanded="true" signature="2039:2041" ph="..." />
+                <marker date="1596279019371" expanded="true" signature="2713:2715" ph="..." />
+                <marker date="1596279019371" expanded="true" signature="2909:3002" ph="..." />
+                <marker date="1596279019371" expanded="true" signature="3000:3002" ph="..." />
+                <marker date="1596279019371" expanded="true" signature="3228:3305" ph="..." />
               </folding>
             </state>
           </provider>
@@ -186,7 +189,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-1" />
     <option name="width" value="1922" />
     <option name="height" value="1050" />
@@ -336,7 +339,7 @@
     <frame x="-1" y="0" width="1922" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.170706" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.170706" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="DB Browser" order="3" />
@@ -349,7 +352,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="DB Execution Console" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.219935" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.219935" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.32936078" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -463,20 +466,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beforeFile_2_8.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blenderAddons/Panelrigupdate1_ui.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
           <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#338#348#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -484,17 +477,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-22323">
           <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#338#348#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blenderAddons/Panelrig1.0_ui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30053">
+        <state relative-caret-position="-30053" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blenderAddons/Panelrigupdate2_ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="1429" lean-forward="true" selection-start-line="1429" selection-end-line="1429" />
           <folding>
-            <element signature="e#342#352#0" expanded="true" />
+            <element signature="e#338#348#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -526,16 +522,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blenderAddons/Panelrigupdate2_ui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="1429" lean-forward="true" selection-start-line="1429" selection-end-line="1429" />
-          <folding>
-            <element signature="e#338#348#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blenderAddons/StickyLips.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -546,20 +532,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/blenderAddons/StickyLipsAddon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="1" selection-start-line="5" selection-end-line="16" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/blenderShading.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
           <folding>
             <marker date="1594298359124" expanded="true" signature="562:565" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blenderAddons/StickyLipsAddon.py">
+    <entry file="file://$PROJECT_DIR$/beforeFile_2_8.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="5" selection-end-line="16" selection-end-column="1" />
+        <state relative-caret-position="287">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -568,12 +564,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cameraRotation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
+        <state relative-caret-position="374">
+          <caret line="76" column="9" lean-forward="true" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
           <folding>
-            <marker date="1596195299488" expanded="true" signature="2020:2022" ph="..." />
-            <marker date="1596195299488" expanded="true" signature="2915:3029" ph="..." />
-            <marker date="1596195299488" expanded="true" signature="4059:4266" ph="..." />
+            <element signature="e#273#283#0" expanded="true" />
+            <marker date="1596279019371" expanded="true" signature="2039:2041" ph="..." />
+            <marker date="1596279019371" expanded="true" signature="2713:2715" ph="..." />
+            <marker date="1596279019371" expanded="true" signature="2909:3002" ph="..." />
+            <marker date="1596279019371" expanded="true" signature="3000:3002" ph="..." />
+            <marker date="1596279019371" expanded="true" signature="3228:3305" ph="..." />
           </folding>
         </state>
       </provider>

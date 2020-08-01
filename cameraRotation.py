@@ -10,6 +10,7 @@ bl_info = {
 }
 
 import bpy
+import addon_utils
 
 origRot = None
 
@@ -68,24 +69,22 @@ class OBJECT_OT_camResetRot(bpy.types.Operator):
 
 def toggleCamRot(self, context):
     global origRot
+    bpy.ops.preferences.addon_disable(module="rotate_canvas-master")
     if (bpy.context.scene.enable_cam_rot == True):
-        origRot = bpy.context.scene.camera.rotation_euler.copy()
         bpy.ops.preferences.addon_enable(module="rotate_canvas-master")
+        origRot = bpy.context.scene.camera.rotation_euler.copy()
         print("enabled.")
     else:
+        bpy.ops.preferences.addon_disable(module="rotate_canvas-master")
         rotMode = bpy.context.scene.camera.rotation_mode
         bpy.context.scene.camera.rotation_mode = 'XYZ'
         bpy.context.scene.camera.rotation_euler = origRot
         bpy.context.scene.camera.rotation_mode = rotMode
-        bpy.ops.preferences.addon_disable(module="rotate_canvas-master")
         print("disabled.")
 
 
 class camRotProps(bpy.types.PropertyGroup):
     bpy.types.Scene.enable_cam_rot = bpy.props.BoolProperty(name="", description="Enable Camera Rotation Addon", default=False, update=toggleCamRot)
-
-# def reset_func(self, context):
-#     self.layout.operator(OBJECT_OT_camResetRot.bl_idname)
 
 
 classes = (
@@ -95,42 +94,17 @@ OBJECT_OT_camResetRot,
 camRotProps,
 )
 
-addon_keymaps = []
-
-def register_keymaps():
-    addon = bpy.context.window_manager.keyconfigs.addon
-    km = bpy.context.window_manager.keyconfigs.addon.keymaps.get("3D View")
-    if not km:
-        km = addon.keymaps.new(name="3D View", space_type="VIEW_3D")  # valid only in 3d view
-
-    if 'view3d.rotate_canvas' not in km.keymap_items:
-        km = addon.keymaps.new(name='3D View', space_type='VIEW_3D')
-        kmi = km.keymap_items.new('object.reset_cam_rot',
-                                  type="R", value="PRESS", alt=True, ctrl=True,
-                                  shift=False, any=False)
-        ## hardcoded
-        # kmi = km.keymap_items.new('view3d.rotate_canvas', 'MIDDLEMOUSE', 'PRESS', ctrl=True, shift=False, alt=True)# ctrl + alt + mid mouse
-        # kmi = km.keymap_items.new('view3d.rotate_canvas', type='RIGHTMOUSE', value="PRESS", alt=True, ctrl=True, shift=False, any=False)# ctrl + alt + right mouse
-        addon_keymaps.append(km)
-
-def unregister_keymaps():
-    for km in addon_keymaps:
-        for kmi in km.keymap_items:
-            km.keymap_items.remove(kmi)
-    addon_keymaps.clear()
-    # del addon_keymaps[:]
-
 def register():
+    print("registering.")
     for cls in reversed(classes):
         bpy.utils.register_class(cls)
-    register_keymaps()
-
-
+    addon_utils.disable("rotate_canvas-master", default_set=True)
 
 def unregister():
+    print("unregistering.")
     for cls in reversed(classes):
         bpy.utils.unregister_class(cls)
-    unregister_keymaps()
+
 
 if __name__ == "__main__":
     register()
