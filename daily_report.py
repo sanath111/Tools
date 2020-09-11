@@ -42,6 +42,7 @@ username = os.environ['USER']
 authUsers = None
 
 currUser = username
+currUserDict = {}
 
 # parser = argparse.ArgumentParser(description="Utility to repair items")
 # parser.add_argument("-i","--item",dest="item",help="name of item")
@@ -58,6 +59,7 @@ class dailyReportWidget():
         # self.loadJson()
         self.ui.calendar.setMaximumDate(QtCore.QDate.currentDate())
         self.ui.calendar.clicked.connect(self.loadText)
+        self.ui.saveButton.clicked.connect(self.saveReport)
 
         self.loadVars()
         self.loadUsers()
@@ -69,6 +71,8 @@ class dailyReportWidget():
         qssFile = os.path.join(projDir, "light.qss")
         with open(qssFile, "r") as sS:
             self.ui.setStyleSheet(sS.read())
+
+
 
     def loadVars(self):
         global authUsers
@@ -103,11 +107,12 @@ class dailyReportWidget():
 
             butt.clicked.connect(lambda x, butt=butt: self.buttClick(butt))
 
+        self.ui.resize()
+
     def buttClick(self,butt):
         global currUser
-        debug.info("butt clicked!")
+        # debug.info("butt clicked!")
         currUser = butt.text()
-
         self.loadText()
 
     def loadText(self):
@@ -117,17 +122,37 @@ class dailyReportWidget():
         self.loadJson(date)
 
     def loadJson(self,date):
+        global currUser
+        global currUserDict
         try:
-            with open("/crap/crap.server/Sanath_Shetty/tests/daily_reports/"+currUser+".json") as f:
-                data = json.load(f)
-                try:
-                    text = (data['entries'][date]['text'])
-                    self.ui.textBox.setText(text)
-                except:
-                    debug.info(str(sys.exc_info()))
-                    self.ui.textBox.clear()
+            f = open("/crap/crap.server/Sanath_Shetty/tests/daily_reports/"+currUser+".json")
+            data = json.load(f)
+            # debug.info(data)
+            currUserDict = data
+            try:
+                text = (data['entries'][date]['text'])
+                self.ui.textBox.setText(text)
+            except:
+                debug.info(str(sys.exc_info()))
+                self.ui.textBox.clear()
         except:
             debug.info(str(sys.exc_info()))
+
+    def saveReport(self):
+        global currUser
+        global currUserDict
+        date = self.ui.calendar.selectedDate().toString(QtCore.Qt.ISODate)
+        dT = str(datetime.datetime.strptime(date, "%Y-%m-%d").date())
+        debug.info(dT)
+        # debug.info(date)
+        text = self.ui.textBox.toPlainText()
+        debug.info(text)
+        if text:
+            debug.info("saving")
+            currUserDict['entries'][dT] = {"text" : text}
+            debug.info(currUserDict)
+            with open("/crap/crap.server/Sanath_Shetty/tests/daily_reports/"+currUser+".json", 'w') as outfile:
+                json.dump(currUserDict, outfile, sort_keys=True, indent=4)
 
 
     def center(self):
