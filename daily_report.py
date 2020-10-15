@@ -42,7 +42,9 @@ username = os.environ['USER']
 authUsers = None
 
 currUser = username
-currUserDict = {}
+currUserDict = {"entries": {}}
+
+jsonPath = "/blueprod/STOR2/stor2/grantha/share/dailyReports/"
 
 # parser = argparse.ArgumentParser(description="Utility to repair items")
 # parser.add_argument("-i","--item",dest="item",help="name of item")
@@ -107,7 +109,9 @@ class dailyReportWidget():
 
             butt.clicked.connect(lambda x, butt=butt: self.buttClick(butt))
 
-        self.ui.resize()
+        # cal = CalendarWidget()
+        # cal.setMaximumDate(QtCore.QDate.currentDate())
+        # layV.addWidget(cal)
 
     def buttClick(self,butt):
         global currUser
@@ -125,16 +129,24 @@ class dailyReportWidget():
         global currUser
         global currUserDict
         try:
-            f = open("/crap/crap.server/Sanath_Shetty/tests/daily_reports/"+currUser+".json")
+            f = open(jsonPath+currUser+".json")
             data = json.load(f)
             # debug.info(data)
             currUserDict = data
             try:
                 text = (data['entries'][date]['text'])
                 self.ui.textBox.setText(text)
+            except (KeyError):
+                debug.info("key error")
+                self.ui.textBox.clear()
             except:
                 debug.info(str(sys.exc_info()))
                 self.ui.textBox.clear()
+        except (IOError):
+            debug.info("io error")
+            with open(jsonPath+currUser+".json", 'w') as outfile:
+                json.dump(currUserDict, outfile, sort_keys=True, indent=4)
+
         except:
             debug.info(str(sys.exc_info()))
 
@@ -146,12 +158,12 @@ class dailyReportWidget():
         debug.info(dT)
         # debug.info(date)
         text = self.ui.textBox.toPlainText()
-        debug.info(text)
+        # debug.info(text)
         if text:
             debug.info("saving")
             currUserDict['entries'][dT] = {"text" : text}
-            debug.info(currUserDict)
-            with open("/crap/crap.server/Sanath_Shetty/tests/daily_reports/"+currUser+".json", 'w') as outfile:
+            # debug.info(currUserDict)
+            with open(jsonPath+currUser+".json", 'w') as outfile:
                 json.dump(currUserDict, outfile, sort_keys=True, indent=4)
 
 
@@ -161,6 +173,30 @@ class dailyReportWidget():
         qr.moveCenter(cp)
         self.ui.move(qr.topLeft())
 
+# class CalendarWidget(QtWidgets.QCalendarWidget):
+#     def __init__(self, parent=None):
+#         super(CalendarWidget, self).__init__(parent,
+#             verticalHeaderFormat=QtWidgets.QCalendarWidget.NoVerticalHeader,gridVisible=False)
+#
+#         for d in (QtCore.Qt.Saturday, QtCore.Qt.Sunday,):
+#             fmt = self.weekdayTextFormat(d)
+#             fmt.setForeground(QtCore.Qt.darkGray)
+#             self.setWeekdayTextFormat(d, fmt)
+#
+#     def paintCell(self, painter, rect, date):
+#         if date == self.selectedDate():
+#             painter.save()
+#             painter.fillRect(rect, QtGui.QColor("white"))
+#             painter.setPen(QtCore.Qt.NoPen)
+#             painter.setBrush(QtGui.QColor("#76797C"))
+#             r = QtCore.QRect(QtCore.QPoint(), min(rect.width(), rect.height())*QtCore.QSize(1, 1))
+#             r.moveCenter(rect.center())
+#             painter.drawEllipse(r)
+#             painter.setPen(QtGui.QPen(QtGui.QColor("white")))
+#             painter.drawText(rect, QtCore.Qt.AlignCenter, str(date.day()))
+#             painter.restore()
+#         else:
+#             super(CalendarWidget, self).paintCell(painter, rect, date)
 
 if __name__ == '__main__':
     setproctitle.setproctitle("DAILY_REPORT")

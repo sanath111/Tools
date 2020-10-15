@@ -457,8 +457,47 @@ QTabBar::tab:top:selected {
 
 /* QCalendarWidget */
 
-QCalendarWidget {
-    border: 1px solid #76797C;
-    border-radius: 4px;
+QCalendarWidget QToolButton {
+  	color: black;
+  	background-color: #cec9c4;
+}
+
+QCalendarWidget QMenu {
+    color: black;
+    background-color: #cec9c4;
+    selection-background-color: #76797C;
+    selection-color: white;
+}
+
+QCalendarWidget QSpinBox {
+    color: black;
+    background-color: #cec9c4;
+    selection-background-color: #76797C;
+    selection-color: white;
+}
+
+QCalendarWidget QSpinBox::up-button { subcontrol-origin: border;  subcontrol-position: top right;}
+QCalendarWidget QSpinBox::down-button {subcontrol-origin: border; subcontrol-position: bottom right;}
+
+
+/* header row */
+
+/* normal days */
+QCalendarWidget QAbstractItemView:enabled{
+    color: black;
+    background-color: transparent white;
+    selection-background-color: #76797C;
+    selection-color: white;
+}
+
+/* days in other months */
+
+/* navigation bar */
+QCalendarWidget QWidget#qt_calendar_navigationbar{
+    background-color: #cec9c4;
+}
+
+QCalendarWidget QAbstractItemView:disabled{
+    color: #cec9c4);
 }
 
