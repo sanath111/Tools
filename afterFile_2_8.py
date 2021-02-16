@@ -8,7 +8,7 @@ bpy.ops.file.make_paths_absolute()
 bpy.context.scene.render.fps = 24
 bpy.context.scene.render.fps_base = 1
 bpy.context.scene.keying_sets_all.active = bpy.context.scene.keying_sets_all['LocRotScale']
-bpy.context.scene.render.engine = 'CYCLES'
+# bpy.context.scene.render.engine = 'CYCLES'
 bpy.context.scene.cycles.progressive = 'BRANCHED_PATH'
 bpy.context.scene.cycles.preview_aa_samples = 1
 bpy.context.scene.display_settings.display_device = 'sRGB'
@@ -71,9 +71,9 @@ def setOutPut():
   bpy.context.scene.render.ffmpeg.packetsize = 2048
   bpy.context.scene.render.ffmpeg.muxrate = 10080000
   bpy.context.scene.render.ffmpeg.audio_codec = 'AAC'
-  bpy.context.scene.render.resolution_x = 1280
-  bpy.context.scene.render.resolution_y = 720
-  bpy.context.scene.render.resolution_percentage = 100
+  # bpy.context.scene.render.resolution_x = 1280
+  # bpy.context.scene.render.resolution_y = 720
+  # bpy.context.scene.render.resolution_percentage = 100
 
 
 if(not rbhus_isRendering):
@@ -85,7 +85,8 @@ if(not rbhus_isRendering):
       x.show_safe_areas = True
     if(stageType == "anim"):
       setOutPut()
-      bpy.context.scene.render.use_stamp = True
+      # bpy.context.scene.render.use_stamp = True
+      bpy.context.scene.render.use_stamp = False
       bpy.context.scene.render.stamp_font_size = 20
       bpy.context.scene.render.use_stamp_time = False
       bpy.context.scene.render.use_stamp_date = False

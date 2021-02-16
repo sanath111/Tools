@@ -23,7 +23,9 @@ optDir = "/opt/blender-daily_build/"
 # version_str = "(?=.*2.82)(?=.*linux-glibc217-x86_64.tar.xz)"
 # version_str = "(?=.*2.83)(?=.*linux64.tar.xz)"
 # version_str = "(?=.*2.90)(?=.*linux64.tar.xz)"
-version_str = "(?=.*2.91)(?=.*linux64.tar.xz)"
+# version_str = "(?=.*2.91)(?=.*linux64.tar.xz)"
+# version_str = "(?=.*2.92)(?=.*linux64.tar.xz)"
+version_str = "(?=.*2.93)(?=.*linux64.tar.xz)"
 
 for link in soup.findAll('a', attrs={'href': re.compile(version_str)}):
     fileName = link.get('href').replace("/download/","")
