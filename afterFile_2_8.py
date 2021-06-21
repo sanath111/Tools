@@ -2,7 +2,8 @@ import bpy
 import sys
 import os
 import re
-bpy.context.scene.unit_settings.system = 'METRIC'
+# bpy.context.scene.unit_settings.system = 'METRIC'
+bpy.context.scene.unit_settings.system = 'IMPERIAL'
 bpy.context.scene.unit_settings.system_rotation = 'DEGREES'
 bpy.ops.file.make_paths_absolute()
 bpy.context.scene.render.fps = 24
