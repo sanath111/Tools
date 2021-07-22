@@ -11,20 +11,43 @@ import os
 from bs4 import BeautifulSoup
 import urllib2
 import re
+import argparse
 
-htmlPage = urllib2.urlopen("https://builder.blender.org/download/")
-soup = BeautifulSoup(htmlPage, 'html.parser')
-downloadLink = None
-fileName = None
-untaredFolder = None
-optDir = "/opt/blender-daily_build/"
+parser = argparse.ArgumentParser(description="blender alpha builds downloader")
+parser.add_argument("-t","--type",dest="type",help="Type of the build.(ex: daily, experimental")
+parser.add_argument("-v","--version",dest="version",help="Version of the build.(ex: 3.0.0-alpha)")
+parser.add_argument("-b","--branch",dest="branch",help="Branch of the build.(ex: master, cycles-x)")
+args = parser.parse_args()
+
+build_str = ""
+version_str = ""
+
+# build_str = "https://builder.blender.org/download/experimental/"
 
 # version_str = "(?=.*2.82)(?=.*linux-glibc217-x86_64.tar.xz)"
 # version_str = "(?=.*2.83)(?=.*linux64.tar.xz)"
 # version_str = "(?=.*2.90)(?=.*linux64.tar.xz)"
 # version_str = "(?=.*2.91)(?=.*linux64.tar.xz)"
 # version_str = "(?=.*2.92)(?=.*linux64.tar.xz)"
-version_str = "(?=.*3.0.0)(?=.*alpha)(?=.*linux.x86_64-release.tar.xz)"
+# version_str = "(?=.*3.0.0)(?=.*alpha)(?=.*cycles-x)(?=.*linux.x86_64-release.tar.xz)"
+
+if args.type:
+    build_str = "https://builder.blender.org/download/"+args.type+"/"
+else:
+    build_str = "https://builder.blender.org/download/daily/"
+
+if args.version and args.branch:
+    version_str = "(?=.*{0})(?=.*{1})(?=.*linux.x86_64-release.tar.xz)".format(args.version, args.branch)
+else:
+    version_str = "(?=.*3.0.0-alpha)(?=.*master)(?=.*linux.x86_64-release.tar.xz)"
+
+
+htmlPage = urllib2.urlopen(build_str)
+soup = BeautifulSoup(htmlPage, 'html.parser')
+downloadLink = None
+fileName = None
+untaredFolder = None
+optDir = "/opt/blender-daily_build/"
 
 try:
     links = {}
@@ -35,7 +58,7 @@ try:
             links[str(downloadLabel)] = str(downloadLink)
 
     downloadLink = str(links['linux 64bit tar.xz file'])
-    fileName = str(downloadLink.replace("https://builder.blender.org/download/daily/",""))
+    fileName = str(downloadLink.replace(build_str,""))
     untarredFolder = str(fileName.replace(".tar.xz",""))
     print (downloadLink)
     print (fileName)
@@ -44,7 +67,7 @@ try:
     if (os.path.exists(os.path.join(optDir, untarredFolder))):
         os.system("sudo ln -sf " + optDir + untarredFolder + "/blender /usr/local/bin/blenderBeta")
         print("already up to date")
-        sys.exit(0)
+        # sys.exit(0)
     else:
         os.system("sudo aria2c -c -s 10 -x 10 -d " + optDir + " " + downloadLink)
         os.system("cd " + optDir + " ;sudo tar -xvf " + fileName + " ; cd -")

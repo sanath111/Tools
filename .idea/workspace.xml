@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="71b05198-6b69-41f3-a6bb-ae7ddd7641c5" name="Default Changelist" comment="second">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/afterFile_2_8.py" beforeDir="false" afterPath="$PROJECT_DIR$/afterFile_2_8.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/afterFile_2_8.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beforeFile_2_8.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/blender-daily_build.py" beforeDir="false" afterPath="$PROJECT_DIR$/blender-daily_build.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/wakeupMonitors.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/wakeupMonitors.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +59,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.bot">
+  <component name="RunManager" selected="Python.webcam-capture-v1.01">
     <configuration name="bot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Tools" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -144,14 +144,37 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="webcam-capture-v1.01" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Tools" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="/crap/crap.server/Sanath_Shetty/test/capturing-images-from-webcam-using-opencv-python-master" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="/crap/crap.server/Sanath_Shetty/test/capturing-images-from-webcam-using-opencv-python-master/webcam-capture-v1.01.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.bot" />
       <item itemvalue="Python.layouts" />
       <item itemvalue="Python.test01" />
       <item itemvalue="Python.timer" />
+      <item itemvalue="Python.webcam-capture-v1.01" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.webcam-capture-v1.01" />
         <item itemvalue="Python.bot" />
         <item itemvalue="Python.timer" />
         <item itemvalue="Python.layouts" />
@@ -184,36 +207,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="second" />
     <option name="LAST_COMMIT_MESSAGE" value="second" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="2426" y="87" width="900" height="877" key="CommitChangelistDialog2" timestamp="1616562286344">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2426" y="87" width="900" height="877" key="CommitChangelistDialog2/1920.0.1920.1080/0.0.1920.1045@1920.0.1920.1080" timestamp="1616562286344" />
-    <state width="1898" height="160" key="GridCell.Tab.0.bottom" timestamp="1616563391041">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1898" height="160" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.0.1920.1045@1920.0.1920.1080" timestamp="1616563391041" />
-    <state width="1898" height="160" key="GridCell.Tab.0.center" timestamp="1616563391041">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1898" height="160" key="GridCell.Tab.0.center/1920.0.1920.1080/0.0.1920.1045@1920.0.1920.1080" timestamp="1616563391041" />
-    <state width="1898" height="160" key="GridCell.Tab.0.left" timestamp="1616563391041">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1898" height="160" key="GridCell.Tab.0.left/1920.0.1920.1080/0.0.1920.1045@1920.0.1920.1080" timestamp="1616563391041" />
-    <state width="1898" height="160" key="GridCell.Tab.0.right" timestamp="1616563391041">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1898" height="160" key="GridCell.Tab.0.right/1920.0.1920.1080/0.0.1920.1045@1920.0.1920.1080" timestamp="1616563391041" />
-    <state x="2369" y="160" width="1022" height="731" key="SettingsEditor" timestamp="1616561754696">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2369" y="160" width="1022" height="731" key="SettingsEditor/1920.0.1920.1080/0.0.1920.1045@1920.0.1920.1080" timestamp="1616561754696" />
-    <state x="2543" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1613027552735">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2543" y="231" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.0.1920.1045@1920.0.1920.1080" timestamp="1613027552735" />
   </component>
   <component name="masterDetails">
     <states>
