@@ -39,7 +39,10 @@ else:
 if args.version and args.branch:
     version_str = "(?=.*{0})(?=.*{1})(?=.*linux.x86_64-release.tar.xz)".format(args.version, args.branch)
 else:
-    version_str = "(?=.*3.0.0-alpha)(?=.*master)(?=.*linux.x86_64-release.tar.xz)"
+    # version_str = "(?=.*3.0.0-alpha)(?=.*master)(?=.*linux.x86_64-release.tar.xz)"
+    # version_str = "(?=.*3.0.0-beta)(?=.*v30)(?=.*linux.x86_64-release.tar.xz)"
+    # version_str = "(?=.*3.2)(?=.*linux.x86_64-release.tar.xz)"
+    version_str = "(?=.*3.3.0)(?=.*linux.x86_64-release.tar.xz)"
 
 
 htmlPage = urllib2.urlopen(build_str)
@@ -69,6 +72,7 @@ try:
         print("already up to date")
         # sys.exit(0)
     else:
+        # os.system("sudo aria2c --check-certificate=false -c -s 10 -x 10 -d " + optDir + " " + downloadLink)
         os.system("sudo aria2c -c -s 10 -x 10 -d " + optDir + " " + downloadLink)
         os.system("cd " + optDir + " ;sudo tar -xvf " + fileName + " ; cd -")
         # os.system("sudo rm -frv /usr/local/bin/blender")
