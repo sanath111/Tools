@@ -1,0 +1,10 @@
+#youtube-dl config for aria2c and playlist download
+#mkdir -p ~/.config/youtube-dl/
+#nano ~/.config/youtube-dl/config
+#paste below lines in above file
+
+#-o "[%(upload_date)s][%(id)s] %(title)s (by %(uploader)s).%(ext)s"
+
+-o "%(playlist_index)s"
+--external-downloader aria2c
+--external-downloader-args "-c -j 8 -x 10 -s 10 -k 1M"

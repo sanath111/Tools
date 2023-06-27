@@ -42,7 +42,8 @@ else:
     # version_str = "(?=.*3.0.0-alpha)(?=.*master)(?=.*linux.x86_64-release.tar.xz)"
     # version_str = "(?=.*3.0.0-beta)(?=.*v30)(?=.*linux.x86_64-release.tar.xz)"
     # version_str = "(?=.*3.2)(?=.*linux.x86_64-release.tar.xz)"
-    version_str = "(?=.*3.3.0)(?=.*linux.x86_64-release.tar.xz)"
+    # version_str = "(?=.*3.4)(?=.*linux.x86_64-release.tar.xz)"
+    version_str = "(?=.*4.0.0)(?=.*linux.x86_64-release.tar.xz)"
 
 
 htmlPage = urllib2.urlopen(build_str)
