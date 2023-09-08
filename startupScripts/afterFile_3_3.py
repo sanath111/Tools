@@ -141,7 +141,8 @@ if(not rbhus_isRendering):
       print(str(sys.exc_info()))
 
     if(os.environ['rp_assets_fileType'] != "default"):
-      bpy.context.scene.render.stamp_note_text = ":".join(assPath.split(":")[0:-1])
+      # bpy.context.scene.render.stamp_note_text = ":".join(assPath.split(":")[0:-1])
+      bpy.context.scene.render.stamp_note_text = bpy.path.basename(bpy.data.filepath).strip(".blend")
     else:
       bpy.context.scene.render.stamp_note_text = assPath
 
