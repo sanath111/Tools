@@ -36,14 +36,14 @@ def myData():
         temperature = round(temperature, 2)
         print("Temperature : {0}*C , Humidity: {1}%".format(temperature, humidity))
         time.sleep(5)
+        if temperature > 38.0:
+            blynk.log_event("temperature_warning")
+        blynk.virtual_write(0, humidity,)
+        blynk.virtual_write(1, temperature)
+        print("Values sent to New Blynk Server!")
     else:
         print("Sensor failure. Check wiring.");
 
-    if temperature > 40.0:
-        blynk.log_event("temperature_warning")
-    blynk.virtual_write(0, humidity,)
-    blynk.virtual_write(1, temperature)
-    print("Values sent to New Blynk Server!")
 
 timer.set_interval(5, myData)
 
