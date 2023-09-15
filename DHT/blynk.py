@@ -1,8 +1,3 @@
-"""
-This Code is belong to SME Dehraun. for any query write to schematicslab@gmail.com
-
-"""
-
 import BlynkLib
 import RPi.GPIO as GPIO
 from BlynkTimer import BlynkTimer
@@ -34,13 +29,14 @@ def myData():
         # print("Temp={0:0.1f}C Humidity={1:0.1f}%".format(temperature, humidity))
         humidity = round(humidity, 2)
         temperature = round(temperature, 2)
-        print("Temperature : {0}*C , Humidity: {1}%".format(temperature, humidity))
-        time.sleep(5)
-        if temperature > 38.0:
+        print("{0} Temperature : {1} *C , Humidity: {2} %".format(time.ctime(), temperature, humidity))
+        
+        if temperature > 35.0:
             blynk.log_event("temperature_warning")
         blynk.virtual_write(0, humidity,)
         blynk.virtual_write(1, temperature)
-        print("Values sent to New Blynk Server!")
+        # print("Values sent to New Blynk Server!")
+        time.sleep(5)
     else:
         print("Sensor failure. Check wiring.");
 
