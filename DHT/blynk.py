@@ -31,7 +31,7 @@ def myData():
         temperature = round(temperature, 2)
         print("{0} Temperature : {1} *C , Humidity: {2} %".format(time.ctime(), temperature, humidity))
         
-        if temperature > 35.0:
+        if temperature > 36.0:
             blynk.log_event("temperature_warning")
         blynk.virtual_write(0, humidity,)
         blynk.virtual_write(1, temperature)
