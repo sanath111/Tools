@@ -5,7 +5,7 @@ is_readable() {
   return $?
 }
 
-DIRECTORY="/backup-pool1/crap/"
+DIRECTORY="/backup-pool1/"
 
 if [ -d "$DIRECTORY" ]; then
   # List all files in the directory and its subdirectories

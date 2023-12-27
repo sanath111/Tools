@@ -16,7 +16,7 @@ def is_readable(file_path):
     except IOError:
         return False
 
-dir_path = "/backup-pool1/crap/"
+dir_path = "/backup-pool1/"
 # totalDelete = 0
 
 try:
@@ -26,10 +26,10 @@ try:
             # print(file)
 
             if is_readable(file):
-                # print("File is readable")
+                print("File is readable")
                 pass
             else:
-                # print("File is not readable")
+                print("File is not readable")
                 print(file)
                 # du_cmd = "du -sx \"{0}\" ".format(file)
                 # print (du_cmd)
