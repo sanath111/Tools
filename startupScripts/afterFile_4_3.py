@@ -9,13 +9,12 @@ bpy.ops.file.make_paths_absolute()
 bpy.context.scene.render.fps = 25
 bpy.context.scene.render.fps_base = 1
 bpy.context.scene.keying_sets_all.active = bpy.context.scene.keying_sets_all['Location, Rotation & Scale']
-# bpy.context.scene.render.engine = 'CYCLES'
-bpy.context.scene.cycles.progressive = 'BRANCHED_PATH'
-bpy.context.scene.cycles.preview_aa_samples = 1
+bpy.context.scene.render.engine = 'BLENDER_EEVEE_NEXT'
+# bpy.context.scene.cycles.progressive = 'BRANCHED_PATH'
+bpy.context.scene.eevee.taa_samples = 4
+bpy.context.scene.eevee.taa_render_samples = 8
 bpy.context.scene.display_settings.display_device = 'sRGB'
 bpy.context.scene.view_settings.view_transform = 'Standard'
-bpy.context.scene.cycles.preview_samples = 16
-bpy.context.scene.cycles.samples = 16
 
 
 rbhus_isRendering = False
